@@ -1,0 +1,74 @@
+{
+  "MCUdata": [
+    {
+      "Zone": 1,
+      "soilMoisture": 50,
+      "temperature": 85,
+      "rainLevel": 10,
+      "humidity": 20
+    },
+    {
+      "Zone": 2,
+      "soilMoisture": 50,
+      "temperature": 85,
+      "rainLevel": 10,
+      "humidity": 20
+    },
+    {
+      "Zone": 3,
+      "soilMoisture": 30,
+      "temperature": 83,
+      "rainLevel": 0,
+      "humidity": 2
+    },
+    {
+      "Zone": 4,
+      "soilMoisture": 20,
+      "temperature": 78,
+      "rainLevel": 10,
+      "humidity": 15
+    },
+    {
+      "Zone": 5,
+      "soilMoisture": 50,
+      "temperature": 85,
+      "rainLevel": 10,
+      "humidity": 20
+    },
+    {
+      "Zone": 6,
+      "soilMoisture": 90,
+      "temperature": 85,
+      "rainLevel": 50,
+      "humidity": 60
+    },
+    {
+      "Zone": 7,
+      "soilMoisture": 87,
+      "temperature": 65,
+      "rainLevel": 21,
+      "humidity": 20
+    },
+    {
+      "Zone": 8,
+      "soilMoisture": 76,
+      "temperature": 98,
+      "rainLevel": 10,
+      "humidity": 34
+    },
+    {
+      "Zone": 9,
+      "soilMoisture": 51,
+      "temperature": 81,
+      "rainLevel": 19,
+      "humidity": 6
+    },
+    {
+      "Zone": 10,
+      "soilMoisture": 50,
+      "temperature": 85,
+      "rainLevel": 10,
+      "humidity": 20
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1055281627619",
+    "firebase_url": "https://ecen-ba0cc-default-rtdb.firebaseio.com",
+    "project_id": "ecen-ba0cc",
+    "storage_bucket": "ecen-ba0cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055281627619:android:dcad15d25189e81ebbe0d6",
+        "android_client_info": {
+          "package_name": "com.example.ecen403"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKiOXidkbfCY7hoqZAtQaFobQUJ9HbUto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ECEN403" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimaryDark">@color/black_1</item>
+    </style>
+
+    <style name="Theme.ECEN403" parent="Base.Theme.ECEN403" />
+</resources>
