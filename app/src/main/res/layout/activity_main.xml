@@ -21,13 +21,14 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Today"
                 android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -206,4 +207,17 @@
                 android:paddingEnd="16dp"/>
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/black_1"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="start|top"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

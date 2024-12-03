@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ZoneDataActivites.Zone1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zone 1 Data"
+                android:textColor="@color/white"
+                android:layout_below="@id/back_button"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:id="@+id/zoneTitle"/>
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:background="@null"
+                android:layout_alignParentStart="true"
+                android:layout_margin="16dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/zoneTitle"
+                android:background="@drawable/text_background"
+                android:id="@+id/border">
+
+                <Switch
+                    android:id="@+id/statusSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rtvStatus"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Toggle Valve"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:thumbTint="@color/switch_thumb_color"
+                    android:trackTint="@color/switch_track_color"
+                    tools:ignore="UseSwitchCompatOrMaterialXml"
+                    android:paddingBottom="3dp"/>
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature:"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white" />
+
+                <!-- Value for temperature to be dynamically set -->
+                <TextView
+                    android:id="@+id/rtvTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_toEndOf="@id/temperature"
+                    android:layout_alignBaseline="@id/temperature"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Label for moisture level -->
+                <TextView
+                    android:id="@+id/moisture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Moisture Level:"
+                    android:layout_below="@id/temperature"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Value for moisture level to be dynamically set -->
+                <TextView
+                    android:id="@+id/rtvMoisture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_toEndOf="@id/moisture"
+                    android:layout_alignBaseline="@id/moisture"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Label for humidity -->
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity:"
+                    android:layout_below="@id/moisture"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Value for humidity to be dynamically set -->
+                <TextView
+                    android:id="@+id/rtvHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_toEndOf="@id/humidity"
+                    android:layout_alignBaseline="@id/humidity"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Label for precipitation -->
+                <TextView
+                    android:id="@+id/precipitation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Precipitation:"
+                    android:layout_below="@id/humidity"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Value for precipitation to be dynamically set -->
+                <TextView
+                    android:id="@+id/rtvPrecipitation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_toEndOf="@id/precipitation"
+                    android:layout_alignBaseline="@id/precipitation"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Label for status -->
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+                    android:layout_below="@id/precipitation"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <!-- Value for status to be dynamically set -->
+                <TextView
+                    android:id="@+id/rtvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_toEndOf="@id/status"
+                    android:layout_alignBaseline="@id/status"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/graphTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Graph Title"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:layout_below="@id/border" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/graphTitle"
+                android:layout_marginTop="1dp"
+                android:background="#F5F5F5" />
+
+            <TextView
+                android:id="@+id/graphTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Graph Title"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:layout_below="@id/graph" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_water_amount"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/graphTitle2"
+                android:layout_marginTop="1dp"
+                android:background="#F5F5F5" />
+
+            <TextView
+                android:id="@+id/graphTitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Graph Title"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:layout_below="@id/graph_water_amount" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_rate_speed"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/graphTitle3"
+                android:layout_marginTop="1dp"
+                android:background="#F5F5F5" />
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

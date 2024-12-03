@@ -37,19 +37,50 @@ public class SignupActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name = signupName.getText().toString().trim();
+                String email = signupEmail.getText().toString().trim();
+                String username = signupUsername.getText().toString().trim();
+                String password = signupPassword.getText().toString().trim();
+
+                if (!isValidName(name)) {
+                    Toast.makeText(SignupActivity.this, "Please enter a valid name.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(SignupActivity.this, "All fields must be filled.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    Toast.makeText(SignupActivity.this, "Please enter a valid email address.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (password.length() > 15) {
+                    Toast.makeText(SignupActivity.this, "Password cannot be longer than 15 characters.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (password.length() < 5) {
+                    Toast.makeText(SignupActivity.this, "Password must be longer than 5 characters.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!password.matches(".*[A-Z].*")) {
+                    Toast.makeText(SignupActivity.this, "Password must contain at least one uppercase letter.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!password.matches(".*\\d.*")) {
+                    Toast.makeText(SignupActivity.this, "Password must contain at least one number.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 database = FirebaseDatabase.getInstance();
                 reference = database.getReference("users");
 
-                String name = signupName.getText().toString();
-                String email = signupEmail.getText().toString();
-                String username = signupUsername.getText().toString();
-                String password = signupPassword.getText().toString();
-
                 HelperClass helperClass = new HelperClass(name, email, username, password);
                 reference.child(username).setValue(helperClass);
 
-                Toast.makeText(SignupActivity.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this, "You have signed up successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
@@ -63,4 +94,30 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Validates the name input.
+     * Allows only letters and spaces.
+     *
+     * @param name The name input to validate.
+     * @return True if the name is valid, otherwise false.
+     */
+    private boolean isValidName(String name) {
+        // Ensure only letters, spaces, and hyphens
+        if (!name.matches("^[A-Za-z\\s'-]+$")) {
+            return false;
+        }
+        if (name.isEmpty()) {
+            return false;
+        }
+        if (name.length() < 2 || name.length() > 30) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isValidEmail(String email) {
+        return email.contains("@") && email.endsWith(".com");
+    }
+
 }

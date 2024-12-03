@@ -1,9 +1,13 @@
 package com.example.ecen403.Activities;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +29,21 @@ public class Weather extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initRecyclerView();
+
+        ImageButton backButton = findViewById(R.id.back_button);
+
+        if (backButton != null) {
+            backButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("WeatherActivity", "Back button clicked");
+                    Intent intent = new Intent(Weather.this, Home.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            Log.e("WeatherActivity", "Back button is null");
+        }
     }
 
     private void initRecyclerView() {
